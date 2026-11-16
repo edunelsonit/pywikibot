@@ -63,6 +63,34 @@ Our `installation
 guide <https://www.mediawiki.org/wiki/Manual:Pywikibot/Installation>`_
 has more details for advanced usage.
 
+Developer quick start
+====================
+
+To work on Pywikibot from a clone, create a virtual environment and install
+the project in editable mode with its script and development dependencies:
+
+.. code:: text
+
+    git clone https://gerrit.wikimedia.org/r/pywikibot.git
+    cd core
+    python -m venv .venv
+    . .venv/bin/activate
+    python -m pip install -e ".[scripts]" -r dev-requirements.txt
+
+On Windows, activate the environment with
+``.venv\Scripts\activate`` instead.
+
+Generate the test user files, then run the fast test suite, which excludes
+tests requiring network access:
+
+.. code:: text
+
+    python -m pwb generate_user_files -site:wikipedia:test
+    pytest -a 'not net'
+
+For details on running individual tests and other test options, see the
+`test guide <https://doc.wikimedia.org/pywikibot/stable/tests_ref/index.html>`_.
+
 Basic Usage
 ===========
 
