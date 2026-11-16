@@ -71,7 +71,9 @@ the project in editable mode with its script and development dependencies:
 
 .. code:: text
 
-    git clone https://gerrit.wikimedia.org/r/pywikibot.git
+    git clone https://gerrit.wikimedia.org/r/pywikibot/core.git
+    or
+    git clone https://github.com/edunelsonit/pywikibot.git
     cd core
     python -m venv .venv
     . .venv/bin/activate
